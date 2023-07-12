@@ -2,7 +2,7 @@
 resource "aws_s3_bucket" "public_bucket" {
   bucket = var.bucket_name
     
-  tags {
+  tags = {
     Name = var.s3_tags.Name
   }
 }

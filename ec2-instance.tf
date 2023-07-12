@@ -5,6 +5,6 @@ resource "aws_instance" "example_instance" {
   key_name      = var.key_name  
   vpc_security_group_ids = ["${aws_security_group.terraform_sg.id}"]
   tags = {
-    Name = var.instance_tags
+    Name = "Terraform-Instance"
   }
 }

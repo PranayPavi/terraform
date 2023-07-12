@@ -100,7 +100,7 @@ resource "aws_route_table_association" "pub-subnet_association-2" {
 
 #Security Group
 resource "aws_security_group" "terraform_sg" {
-  name        = "terraform-sg"  
+  name        = var.sg_name
   description = "terraform security group"
 
   vpc_id = aws_vpc.main.id  
@@ -120,8 +120,8 @@ resource "aws_security_group" "terraform_sg" {
   }
 
   egress {
-    from_port   = var.sg_egress_ports
-    to_port     = var.sg_egress_ports
+    from_port   = var.sg_egress_ports[0]
+    to_port     = var.sg_egress_ports[0]
     protocol    = "-1"
     cidr_blocks = var.sg_cidr_blocks
   }

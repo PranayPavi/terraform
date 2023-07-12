@@ -35,6 +35,10 @@ variable "availability_zones" {
   type        = list(string)
 }
 
+variable "sg_name" {
+  type = string
+}
+
 variable "sg_ingress_ports" {
   description = "Ingress ports for security group"
   type        = list(number)
@@ -107,12 +111,12 @@ variable "key_name" {
   description = "Name of the key pair used for SSH access to the EC2 instance"
   type        = string
 }
-
+/*
 variable "security_group_ids" {
   description = "List of security group IDs associated with the EC2 instance"
   type        = list(string)
 }
-
+*/
 variable "instance_tags" {
   description = "Tags for the EC2 instance"
   type        = map(string)
